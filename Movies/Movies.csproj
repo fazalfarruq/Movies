@@ -11,4 +11,9 @@
     <PackageReference Include="HotChocolate.Data.EntityFramework" Version="11.2.2" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Movies.Data\Movies.Data.csproj" />
+    <ProjectReference Include="..\Movies.Service\Movies.Service.csproj" />
+  </ItemGroup>
+
 </Project>

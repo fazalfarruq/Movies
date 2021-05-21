@@ -6,6 +6,9 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Movies.Data.Interfacess;
+using Movies.Data.Types;
+using Movies.Service;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -27,6 +30,10 @@ namespace Movies
         {
 
             services.AddControllers();
+            services.AddSingleton<IAppSettings, AppSettings>();
+            services.AddScoped<IHttpClientService, HttpClientService>();
+            services.AddScoped<IMovieService<MovieDetails>, MovieService<MovieDetails>>();
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

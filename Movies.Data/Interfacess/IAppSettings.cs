@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace Movies.Data.Interfacess
 {
-    class IAppSettings
+    public interface IAppSettings
     {
+        string MovieDetails { get; }
+        string MovieReview { get; }
+        string UpcomingMovies { get; }
     }
 }

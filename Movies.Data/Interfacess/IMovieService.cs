@@ -8,6 +8,6 @@ namespace Movies.Data.Interfacess
 {
     public interface IMovieService<T>
     {
-        Task<IEnumerable<T>> Get(string requestUri);
+        Task<T> Get(string requestUri);
     }
 }

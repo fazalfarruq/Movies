@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Movies.Data.Types
 {
-    public class UpComing : MovieAbstract
+    public class UpComing : Movie
     {
     }
 }
