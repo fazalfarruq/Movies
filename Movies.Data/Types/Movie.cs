@@ -10,19 +10,19 @@ namespace Movies.Data.Types
     public abstract class Movie
     {
         [JsonProperty("adult")]
-        public bool isAdult {get;}
-        public string backdrop_path {get;}
-        public List<int> genre_ids {get;}
-        public int id {get;}
-        public string original_language {get;}
-        public string original_title {get;}
-        public string overview {get;}
-        public double popularity {get;}
-        public string poster_path {get;}
-        public string release_date {get;}
-        public string title {get;}
-        public bool video {get;}
-        public double vote_average {get;}
-        public int vote_count {get;}
+        public bool isAdult { get; set; }
+        public string backdrop_path { get; set; }
+        public List<int> genre_ids { get; set; }
+        public int id { get; set; }
+        public string original_language { get; set; }
+        public string original_title { get; set; }
+        public string overview { get; set; }
+        public double popularity { get; set; }
+        public string poster_path { get; set; }
+        public string release_date { get; set; }
+        public string title { get; set; }
+        public bool video { get; set; }
+        public double vote_average { get; set; }
+        public int vote_count { get; set; }
     }
 }

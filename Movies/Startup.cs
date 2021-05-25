@@ -33,6 +33,14 @@ namespace Movies
             services.AddSingleton<IAppSettings, AppSettings>();
             services.AddScoped<IHttpClientService, HttpClientService>();
             services.AddScoped<IMovieService<MovieDetails>, MovieService<MovieDetails>>();
+            services.AddScoped<IMovieService<MovieWrapper<TopRated>>, MovieService<MovieWrapper<TopRated>>>();
+            services.AddScoped<IMovieService<MovieWrapper<Popular>>, MovieService<MovieWrapper<Popular>>>();
+            services.AddScoped<IMovieService<MovieWrapper<UpComing>>, MovieService<MovieWrapper<UpComing>>>();
+            services.AddScoped<IMovieService<MovieReview>, MovieService<MovieReview>>();
+
+
+
+
 
         }
 

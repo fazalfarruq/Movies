@@ -18,11 +18,10 @@ namespace Movies.Data.Types
         }
 
         public string MovieDetails => _configuration["Config:MovieDetails"];
-
         public string MovieReview => _configuration["Config:MovieReview"];
-
         public string UpcomingMovies => _configuration["Config:UpcomingMovies"];
-
+        public string TopRatedMovies => _configuration["Config:TopRatedMovies"];
+        public string PopularMovies => _configuration["Config:PopularMovies"];
 
     }
 }

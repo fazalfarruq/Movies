@@ -11,5 +11,8 @@ namespace Movies.Data.Interfacess
         string MovieDetails { get; }
         string MovieReview { get; }
         string UpcomingMovies { get; }
+        string TopRatedMovies { get; }
+        string PopularMovies { get; }
+
     }
 }

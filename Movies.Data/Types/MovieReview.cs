@@ -8,6 +8,15 @@ namespace Movies.Data.Types
 {
     public class MovieReview
     {
+        public int id { get; set; }
+        public int page { get; set; }
+        public List<Review> results { get; set; }
+        public int total_pages { get; set; }
+        public int total_results { get; set; }
+    }
+
+    public class Review
+    {
         public string author { get; set; }
         public AuthorDetails author_details { get; set; }
         public string content { get; set; }
