@@ -13,6 +13,10 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using GraphQL.Server.Ui.Voyager;
+using Movies.GraphQL.MovieDetailsType;
+using Movies.GraphQL.PopularMoviesType;
+using Movies.GraphQL.Query;
 
 namespace Movies
 {
@@ -38,11 +42,15 @@ namespace Movies
             services.AddScoped<IMovieService<MovieWrapper<UpComing>>, MovieService<MovieWrapper<UpComing>>>();
             services.AddScoped<IMovieService<MovieReview>, MovieService<MovieReview>>();
 
-
-
-
-
-        }
+            services.AddGraphQLServer()
+                .AddQueryType<Query>()
+                .AddType<MovieDetailsType>()
+                .AddType<PopularMoviesType>()
+                .AddType<TopRatedMoviesType>()
+                .AddType<UpcomingMoviesType>()
+                .AddFiltering()
+                .AddSorting();
+            }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
@@ -52,15 +60,18 @@ namespace Movies
                 app.UseDeveloperExceptionPage();
             }
 
-            app.UseHttpsRedirection();
-
             app.UseRouting();
 
-            app.UseAuthorization();
-
             app.UseEndpoints(endpoints =>
+             {
+                 endpoints.MapGraphQL();
+                 endpoints.MapGraphQLVoyager("/voyager");
+             });
+
+            app.UseGraphQLVoyager(new VoyagerOptions()
             {
-                endpoints.MapControllers();
+                GraphQLEndPoint = "/graphql",
+                
             });
         }
     }

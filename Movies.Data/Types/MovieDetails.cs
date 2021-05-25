@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using HotChocolate;
 
 namespace Movies.Data.Types
 {
-    public class MovieDetails: Movie
+    public class MovieDetails : Movie
     {
         public BelongsToCollection belongs_to_collection { get; set; }
         public int budget { get; set; }
@@ -16,6 +17,8 @@ namespace Movies.Data.Types
         public List<ProductionCompany> production_companies { get; set; }
         public List<ProductionCountry> production_countries { get; set; }
         public int revenue { get; set; }
+        [GraphQLDescription("Movie Duration")]
+
         public int runtime { get; set; }
         public List<SpokenLanguage> spoken_languages { get; set; }
         public string status { get; set; }
