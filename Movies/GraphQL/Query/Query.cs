@@ -15,7 +15,7 @@ namespace Movies.GraphQL.Query
     {
         [UseFiltering]
         [UseSorting]
-        public async Task<IEnumerable<TopRated>> GeTopRatedMovies([Service] IMovieService<MovieWrapper<TopRated>> _service,
+        public async Task<IEnumerable<TopRated>> GetTopRatedMovies([Service] IMovieService<MovieWrapper<TopRated>> _service,
             [Service] IAppSettings _appSettings, [Service] ILogger<Query> _logger)
         {
             try
@@ -34,7 +34,7 @@ namespace Movies.GraphQL.Query
         
         [UseFiltering]
         [UseSorting]
-        public async Task<IEnumerable<Popular>> GePopularMovies([Service] IMovieService<MovieWrapper<Popular>> _service,
+        public async Task<IEnumerable<Popular>> GetPopularMovies([Service] IMovieService<MovieWrapper<Popular>> _service,
             [Service] IAppSettings _appSettings, [Service] ILogger<Query> _logger)
         {
             try
@@ -53,7 +53,7 @@ namespace Movies.GraphQL.Query
 
         [UseFiltering]
         [UseSorting]
-        public async Task<IEnumerable<UpComing>> GeUpComingMovies([Service] IMovieService<MovieWrapper<UpComing>> _service,
+        public async Task<IEnumerable<UpComing>> GetUpComingMovies([Service] IMovieService<MovieWrapper<UpComing>> _service,
             [Service] IAppSettings _appSettings, [Service] ILogger<Query> _logger)
         {
             try
