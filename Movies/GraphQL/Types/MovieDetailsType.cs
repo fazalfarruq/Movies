@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using HotChocolate.Types;
+﻿using HotChocolate.Types;
 using Movies.Data.Types;
 
-namespace Movies.GraphQL.MovieDetailsType
+namespace Movies.GraphQL.Types
 {
     public class MovieDetailsType : ObjectType<MovieDetails>
     {
@@ -13,6 +9,8 @@ namespace Movies.GraphQL.MovieDetailsType
         {
             descriptor.Description("All the information about a movie from TMDB.");
             descriptor.Field(f => f.imdb_id).Ignore();
+            descriptor.Field(f => f.isAdult).Type<BooleanType>().Name("Adult");
+
         }
     }
 }
